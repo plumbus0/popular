@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Neue Haas Grotesk via Adobe Fonts / Google Fonts fallback */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --font-haas: 'NeueHaasGroteskDisplay', 'Barlow', 'Helvetica Neue', Arial, sans-serif;
+
+  --color-yellow: #FFD600;
+  --color-yellow-dark: #E6C000;
+  --color-navy: #0D0D0D;
+  --color-white: #FFFFFF;
+  --color-bg: #F5F5F5;
+  --color-card: #FFFFFF;
+  --color-border: #E5E5E5;
+  --color-muted: #6B6B6B;
+  --color-accent-blue: #5B8DB8;
+
+  --sidebar-width: 64px;
+  --header-height: 60px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-elevated: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-haas);
+  background: var(--color-bg);
+  color: var(--color-navy);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── SECTION HEADING UNDERLINE ACCENT ─── */
+.section-title {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 4px;
+  background: var(--color-yellow);
+  border-radius: 2px;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+/* ─── CARD BASE ─── */
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+/* ─── BUTTON BASE ─── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  background: var(--color-accent-blue);
+  color: white;
+  font-family: var(--font-haas);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  background: #C0645A;
+  color: white;
+  font-family: var(--font-haas);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.btn-danger:hover { opacity: 0.9; }
+
+/* ─── SIDEBAR ACTIVE ─── */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  color: #999;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.sidebar-link:hover {
+  background: #F0F0F0;
+  color: var(--color-navy);
+}
+.sidebar-link.active {
+  background: var(--color-navy);
+  color: var(--color-yellow);
+}
+
+/* ─── EVENT CARD ─── */
+.event-card {
+  background: white;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.event-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* ─── SOCIETY CARD ─── */
+.society-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  border: 1px solid transparent;
+}
+.society-card:hover {
+  background: #FAFAFA;
+  border-color: var(--color-border);
+  transform: translateY(-1px);
+}
+
+/* ─── AVATAR PLACEHOLDER ─── */
+.avatar-placeholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #D9D9D9;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+/* ─── DATE BADGE ─── */
+.date-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  height: 52px;
+  background: var(--color-yellow);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.date-badge span {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* ─── SEARCH BAR ─── */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-yellow);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  font-size: 1rem;
+  color: rgba(0,0,0,0.5);
+  cursor: text;
+}
+
+/* ─── CATEGORY CHIP ─── */
+.category-chip {
+  background: var(--color-yellow);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.15s ease;
+  min-height: 80px;
+}
+.category-chip:hover {
+  filter: brightness(0.95);
+  transform: translateY(-2px);
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 0.4s ease both;
+}
+.animate-delay-1 { animation-delay: 0.05s; }
+.animate-delay-2 { animation-delay: 0.10s; }
+.animate-delay-3 { animation-delay: 0.15s; }
+.animate-delay-4 { animation-delay: 0.20s; }

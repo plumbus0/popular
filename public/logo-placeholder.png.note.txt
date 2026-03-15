@@ -1,0 +1,4 @@
+Drop your logo file here as: /public/logo-placeholder.png
+(PNG, SVG, or WebP — any format works)
+The <img> tag will display it automatically in the sidebar, login page, and landing page.
+Recommended size: at least 64x64px, preferably square.
