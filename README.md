@@ -1,4 +1,4 @@
-# ✨ Sparkle — University Societies & Events Platform
+# ✨ Popular — University Societies & Events Platform
 
 A Next.js 14 + Supabase platform for discovering and joining university societies and events across Australia.
 
@@ -7,7 +7,7 @@ A Next.js 14 + Supabase platform for discovering and joining university societie
 ## 🗂 Project Structure
 
 ```
-sparkle/
+popular/
 ├── app/
 │   ├── page.tsx                  # Landing page
 │   ├── layout.tsx                # Root layout
