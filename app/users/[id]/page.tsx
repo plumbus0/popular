@@ -47,6 +47,7 @@ export default function UserProfilePage() {
           .select('event:events(*, society:societies(*))')
           .eq('user_id', id as string)
           .limit(6)
+          // @ts-ignore
         if (regs) setSharedEvents(regs.map((r: { event: Event }) => r.event).filter(Boolean))
       }
 

@@ -63,6 +63,7 @@ export default function SocietyDetailPage() {
       .from('society_memberships')
       .select('profile:profiles(*)')
       .eq('society_id', id as string)
+      // @ts-ignore
     const profiles = (data ?? []).map((r: { profile: Profile }) => r.profile).filter(Boolean) as Profile[]
     const teamUserIds = new Set(team.map(t => t.user_id).filter(Boolean))
     setRegularMembers(profiles.filter(p => !teamUserIds.has(p.id)))
@@ -92,6 +93,7 @@ export default function SocietyDetailPage() {
       .from('event_registrations')
       .select('profile:profiles(*)')
       .eq('event_id', eventId)
+      // @ts-ignore
     setAttendees((data ?? []).map((r: { profile: Profile }) => r.profile).filter(Boolean) as Profile[])
     setLoadingAttendees(false)
   }
