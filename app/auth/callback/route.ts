@@ -14,8 +14,11 @@ export async function GET(request: NextRequest) {
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
       {
         cookies: {
+          // @ts-ignore
           get(name) { return cookieStore.get(name)?.value },
+          // @ts-ignore
           set(name, value, options) { cookieStore.set({ name, value, ...options }) },
+          // @ts-ignore
           remove(name, options) { cookieStore.set({ name, value: '', ...options }) },
         },
       }
